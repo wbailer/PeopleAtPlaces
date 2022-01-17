@@ -39,6 +39,8 @@ The annotations are contained in `annotations/train` and `annotations/val` direc
 
 `popshotcls_ecu.csv` contains all bustle and shot type annotations per image, including the augmented extreme close-up images.
 
+For the validation dataset, `popshotcls_cvat.csv` provides the subset of annotations input to annotation tool, and `popshotcls_checked.csv` contains the annotations after manual checking.
+
 `imagelist_*.txt` contain the list of images actually used in our experiments.
 
 ## Raw annotations

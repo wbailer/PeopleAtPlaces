@@ -1,4 +1,8 @@
+# People@Places Toolchain
 
+This directory contains the toolchain to produce the annotations and additional images of the People@Places dataset. The tools may be useful to create similar annotations for other datasets.
+
+## Dependencies
 
 ### Pytorch Image Models (TIMM)
 
@@ -81,7 +85,7 @@ We found that extreme close-up images are underrepresented in Places365. Additio
 Run `create_places365_annotations.py` with the following arguments:
 
 ```
---task create_ecu --annotationfile <annotation CSV> --facefile <face detection output> --imgbasepath /path/to/images --imgoutdir /path/to/output/cropped/images
+--task create_ecu --annotationfile <annotation CSV> --facefile <face detection output> --imgbasepath /path/to/images -outdir <annotion CSV output directory> --imgoutdir /path/to/output/cropped/images
 ```
 
 ### Manual verification using CVAT
@@ -122,6 +126,8 @@ To create a directory structure with symbolic links ready to be used by TIMM, ru
 --task timm --annotationfile <annotation CSV file> --imgsourcedir /path/to/images --basedir /output/dir/root --numperclass <nr of items per class> --classtype pop|shot
 ```
 
+If `--binary-pop` is specified, then bustle annotations are grouped into a binary unpopulated vs. populated classification.
+
 ## Utilities
 
 Some other utility functions are supported by the database preparation script.
@@ -142,3 +148,6 @@ To evaluate accuracy of one annotation file against another one (e.g., before an
 --task stats --annotationfile <annotation CSV file treated as ground truth> --annotationfile2 <annotation CSV file> 
 ```
 
+## License
+
+The tools provided here are released under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
