@@ -2,6 +2,11 @@
 
 Release of the additional annotation files and images of the People@Places Dataset. The dataset is derived from the [Places365-Standard dataset](http://places2.csail.mit.edu/download.html). 
 
+An overview of the dataset annotation process is shown in the image below.
+
+![Dataset creation diagram](dataset_creation.png?raw=true "Data creation")
+
+
 ## Annotations
 
 The annotations contain per image annotations for bustle (i.e., more or less populated) and shot type (from extreme close-up to extreme long shot) for the training and validation set of Places365-Standard.
