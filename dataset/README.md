@@ -36,7 +36,7 @@ The annotations contain per image annotations for bustle (i.e., more or less pop
 | 6 | medium full shot | cut under knee |
 | 7 | full shot | person fully visible |
 | 8 | long shot | person ~1/3 of frame height |
-| 9 | extreme long shot & person <1/3 of frame height |
+| 9 | extreme long shot & person | <1/3 of frame height |
 
 The annotations are contained in `annotations/train` and `annotations/val` directories.
 
