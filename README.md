@@ -1,5 +1,5 @@
 # PeopleAtPlaces
-People@Places dataset and related tools
+People@Places [dataset](dataset/README.md) and related [tools](tools/README.md).
 
 # Acknowledgement
 
