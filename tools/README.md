@@ -18,7 +18,7 @@ YOLOv4-CSP is run independently on the images. The output to be further processe
 
 ### RetinaFace
 
-For face detection, we use [RetinaFace](https://github.com/deepinsight/insightface/tree/master/detection/retinaface) with a model trained on WIDER Face. The detector code is called from one of the provided scripts (`run_faces_places365.py`), and the root of the RetinaFace installation must be set in the script.
+For face detection, we use [RetinaFace](https://github.com/deepinsight/insightface/tree/master/detection/retinaface) with a model trained on WIDER Face. The detector code is called from one of the provided scripts (`run_face_places365.py`), and the root of the RetinaFace installation must be set in the script.
 
 ### ROMP
 
@@ -35,10 +35,10 @@ Run YOLOv4-CSP and store the output as MS COCO JSON files. We used a detection t
 Run `create_places365_annotations.py` with the following arguments:
 
 ```
---task process_detections --objjsonfile <YOLO JSON output> --pos_thresh 0.5 --img_prefix /prefix/path/in/jsons --outdir <annotation output directory>
+--task process_detections --objjsonfile <YOLO JSON output> --pos-thresh 0.5 --img_prefix /prefix/path/in/jsons --outdir <annotation output directory>
 ```
 
-`pos_thresh` denotes the threshold to accept an annotation as positive sample, any detection present with lower confidence will be considered unreliable.
+`pos-thresh` denotes the threshold to accept an annotation as positive sample, any detection present with lower confidence will be considered unreliable.
 
 Passing `--anno_discarded` will create a separate output file for discarded images (i.e. with detections below `pos_thresh`).
 
@@ -118,6 +118,8 @@ In order to sample a dataset with valid annotations, run `create_places365_annot
 
 If directories are provided with `--imgbasepath` and `--imgoutdir`, the sampled images will be copied from the base path to the output directory. This is in particular needed to copy original images and extreme close-up images from a directory and the corresponding `_ecu` directory.
 
+If `--task sample` is used instead, the sampling algorithm aims to reduce the overall number of images selected when matching the target numbers per class. This mode is however much slower.
+
 ### Prepare input for TIMM
 
 To create a directory structure with symbolic links ready to be used by TIMM, run `create_places365_annotations.py` with the following arguments:
@@ -147,6 +149,8 @@ To evaluate accuracy of one annotation file against another one (e.g., before an
 ```
 --task stats --annotationfile <annotation CSV file treated as ground truth> --annotationfile2 <annotation CSV file> 
 ```
+
+If `--acc-pm1` is set, classifications into classes with class label off by 1 will be counted as correct.
 
 ## License
 
