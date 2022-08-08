@@ -1,4 +1,4 @@
-# PeopleAtPlaces
+# PeopleAtPlaces: Dataset for bustle and shot type classification
 People@Places [dataset](dataset/README.md) and related [tools](tools/README.md).
 
 # Acknowledgement
